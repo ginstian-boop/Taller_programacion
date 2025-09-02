@@ -1,0 +1,81 @@
+# Unity metadata y archivos binarios
+*.meta binary merge=union
+*.asset binary
+*.unity binary
+*.prefab binary
+*.mat binary
+*.tga binary
+*.jpg binary
+*.png binary
+*.blend binary
+*.fbx binary
+*.psd binary
+*.exr binary
+*.hdr binary
+*.mp3 binary
+*.wav binary
+*.ogg binary
+*.aif binary
+*.mov binary
+*.mp4 binary
+*.anim binary
+*.controller binary
+*.overrideController binary
+*.spriteatlas binary
+*.giparams binary
+*.renderTexture binary
+*.physicMaterial binary
+*.physicMaterial2D binary
+*.flare binary
+*.flare.unity binary
+*.shader binary
+*.compute binary
+*.ttf binary
+*.otf binary
+*.fontsettings binary
+*.pdf binary
+*.xml binary
+*.json binary
+*.shadergraph binary
+*.vfx binary
+*.uss binary
+*.uxml binary
+
+# Archivos de texto para una mejor visualización del historial
+*.cs text
+*.js text
+*.boo text
+*.shader text
+*.cginc text
+*.hlsl text
+*.glslinc text
+*.uxml text
+*.uss text
+*.json text
+*.xml text
+
+# Forzar fin de línea (EOL) para todos los archivos de texto
+# Esto ayuda a evitar problemas de EOL entre diferentes sistemas operativos (Windows, macOS, Linux)
+*.cs eol=lf
+*.js eol=lf
+*.boo eol=lf
+*.shader eol=lf
+*.cginc eol=lf
+*.hlsl eol=lf
+*.glslinc eol=lf
+*.uxml eol=lf
+*.uss eol=lf
+*.json eol=lf
+*.xml eol=lf
+
+# Excluir archivos innecesarios de la gestión de Git
+# Es mejor usar .gitignore para esto, pero se puede complementar aquí.
+# Por ejemplo, ignorar la carpeta de la biblioteca de Unity
+# Library/ binary
+
+# Normalizar los finales de línea para todos los archivos, excepto los binarios
+* text=auto
+
+# Archivos que necesitan manejo especial para evitar conflictos
+*.unity text merge=union
+*.prefab text merge=union
