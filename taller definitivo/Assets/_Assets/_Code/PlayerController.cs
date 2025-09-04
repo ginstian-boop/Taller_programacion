@@ -22,12 +22,12 @@ public class PlayerController : MonoBehaviour
      
         if (Input.GetKey(KeyCode.A))
         { 
-        rb.AddForce(new Vector2(-1, 0) *6);
+        rb.AddForce(new Vector2(-1, 0) *4);
             }
         if (Input.GetKey(KeyCode.D))
         {
 
-            rb.AddForce(new Vector2(1, 0) *6);
+            rb.AddForce(new Vector2(1, 0) *4);
         }
     }
 }

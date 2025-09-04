@@ -10,7 +10,7 @@ public class Hueso : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            GameManager.instance.AumentarPuntos();
+            GameManager._gm.AumentarPuntos();
 
             Destroy(this.gameObject);
         }

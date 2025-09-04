@@ -1,17 +1,22 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class tallerVariables : MonoBehaviour
 {
+
+    [SerializeField]
+    private GameObject tramp;
+    [SerializeField]
+    private GameObject obs;
     [SerializeField]
     private int vida = 3;
     [SerializeField]
     private int puntos = 0;
+    
     [SerializeField]
-    private float tiempo = 60f;
-    [SerializeField]
-    private bool llave = true;
+    private bool llave = false;
 
 
     [Header("Varibles Unity")]
@@ -39,7 +44,17 @@ public class tallerVariables : MonoBehaviour
     }
     void Update()
     {
+        if (puntos >= 10)
+        {
 
+            Destroy(obs);
+
+        }
+
+        if (vida <= 0)
+        {
+            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(1);
+        }
 
 
 
@@ -50,5 +65,18 @@ public class tallerVariables : MonoBehaviour
         puntos++;
         puntosText.text = "Puntos : " + puntos;
     }
+
+
+    public void restarvida()
+    {
+        vida--;
+        vidaText.text = "Vida : " + vida;
     }
+    public void Sumarvida()
+    {
+        vida++;
+        vidaText.text = "Vida : " + vida;
+    }
+}
+
 
