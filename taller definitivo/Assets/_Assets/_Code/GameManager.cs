@@ -1,6 +1,7 @@
 
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 
 public class GameManager : MonoBehaviour
@@ -9,8 +10,6 @@ public class GameManager : MonoBehaviour
     public static GameManager _gm;
 
     public tallerVariables uiManager;
-
-    public obstaculo obs;
 
     public Trampa tramp;
 
@@ -46,8 +45,23 @@ public class GameManager : MonoBehaviour
 
     }
 
+    public void mastiempo()
+    {
 
+        uiManager.sumarTiempo();
 
+    }
+
+    public void tienellave()
+    {
+
+        uiManager.ponerllave(); 
+
+    }
+public void abrirpuerta()
+    {
+
+        uiManager.Abrirpuerta();
+
+    }
 }
-
-

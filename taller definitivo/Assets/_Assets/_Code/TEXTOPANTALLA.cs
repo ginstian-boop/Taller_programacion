@@ -3,8 +3,13 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
+
 public class tallerVariables : MonoBehaviour
 {
+
+    [SerializeField]
+
+    private GameObject puerta;
 
     [SerializeField]
     private GameObject tramp;
@@ -14,9 +19,14 @@ public class tallerVariables : MonoBehaviour
     private int vida = 3;
     [SerializeField]
     private int puntos = 0;
-    
+
+    [SerializeField]
+    private float tiempo = 60f;
+
     [SerializeField]
     private bool llave = false;
+
+
 
 
     [Header("Varibles Unity")]
@@ -30,12 +40,13 @@ public class tallerVariables : MonoBehaviour
     private TMP_Text llavetext;
 
 
+
     void Start()
     {
 
         vidaText.text = "Vida : " + vida;
         puntosText.text = "Puntos : " + puntos;
-        tiempoText.text = "Tiempo :  " + tiempo;
+
         llavetext.text = "Llave?  " + llave;
 
 
@@ -44,6 +55,21 @@ public class tallerVariables : MonoBehaviour
     }
     void Update()
     {
+
+        tiempo -= Time.deltaTime;
+        tiempoText.text = "Tiempo :  " + tiempo.ToString("f0");
+
+        if (tiempo <= 0)
+        {
+            SceneManager.LoadScene(1);
+
+        }
+
+
+
+
+
+
         if (puntos >= 10)
         {
 
@@ -53,7 +79,7 @@ public class tallerVariables : MonoBehaviour
 
         if (vida <= 0)
         {
-            Scene scene = SceneManager.GetActiveScene(); SceneManager.LoadScene(1);
+            SceneManager.LoadScene(1);
         }
 
 
@@ -76,6 +102,27 @@ public class tallerVariables : MonoBehaviour
     {
         vida++;
         vidaText.text = "Vida : " + vida;
+    }
+
+    public void sumarTiempo()
+    {
+        tiempo += 5;
+
+    }
+
+    public void ponerllave()
+    {
+        llave = true;
+
+        llavetext.text = "Llave?  " + llave;
+    }
+    
+    public void Abrirpuerta()
+    {
+        if (llave == true)
+        {
+             SceneManager.LoadScene(2);
+        }
     }
 }
 
