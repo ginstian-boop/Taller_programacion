@@ -124,6 +124,25 @@ public class tallerVariables : MonoBehaviour
              SceneManager.LoadScene(2);
         }
     }
+    public void EstadoDeJuego(string estado)
+    {
+        switch (estado)
+        {
+
+            case "play":
+                Time.timeScale = 1;
+                break;
+            case "Pause":
+             
+                 Time.timeScale = 0 ;
+                break;
+
+
+
+
+
+        }
+    }
 }
 
 

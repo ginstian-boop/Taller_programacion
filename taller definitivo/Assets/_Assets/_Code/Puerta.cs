@@ -9,8 +9,11 @@ public class Puerta : MonoBehaviour
         {
             if (GameManager._gm != null)
             {
-                GameManager._gm.abrirpuerta(); 
+                GameManager._gm.abrirpuerta();
             }
         }
     }
+
+   
+
 }
