@@ -7,8 +7,11 @@ using UnityEngine.SceneManagement;
 public class tallerVariables : MonoBehaviour
 {
 
-    [SerializeField]
 
+
+    [SerializeField]
+    private GameObject llaveHud;
+    [SerializeField]
     private GameObject puerta;
 
     [SerializeField]
@@ -47,7 +50,7 @@ public class tallerVariables : MonoBehaviour
         vidaText.text = "Vida : " + vida;
         puntosText.text = "Puntos : " + puntos;
 
-        llavetext.text = "Llave?  " + llave;
+        ActualizarLlaveHUD();
 
 
 
@@ -114,9 +117,18 @@ public class tallerVariables : MonoBehaviour
     {
         llave = true;
 
-        llavetext.text = "Llave?  " + llave;
+        ActualizarLlaveHUD();
     }
-    
+    private void ActualizarLlaveHUD()
+    {
+
+        if (llaveHud != null)
+        {
+            llaveHud.SetActive(llave);
+        }
+    }
+
+
     public void Abrirpuerta()
     {
         if (llave == true)
