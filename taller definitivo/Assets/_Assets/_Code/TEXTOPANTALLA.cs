@@ -1,5 +1,6 @@
 using Microsoft.Unity.VisualStudio.Editor;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -94,7 +95,7 @@ public class tallerVariables : MonoBehaviour
 
         if (vida <= 0)
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(3);
         }
 
 
@@ -181,6 +182,12 @@ public class tallerVariables : MonoBehaviour
        #if UNITY_EDITOR
                 UnityEditor.EditorApplication.isPlaying = false;
 #endif
+                break;
+
+            case "PLAY2":
+
+                SceneManager.LoadScene(1);
+
                 break;
         }
     }

@@ -7586,7 +7586,7 @@ MonoBehaviour:
   obs: {fileID: 1285557260}
   vida: 3
   puntos: 0
-  tiempo: 200
+  tiempo: 60
   llave: 0
   panelPausa: {fileID: 1812164581}
   vidaText: {fileID: 2066153843}
